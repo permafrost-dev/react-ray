@@ -1,0 +1,72 @@
+{
+    "name": "package-skeleton",
+    "version": "1.0.0",
+    "author": "{{package.author.name}} <{{package.author.email}}>",
+    "license": "MIT",
+    "description": "{{package.description}}",
+    "homepage": "https://github.com/{{vendor.github}}/{{package.name}}",
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/{{vendor.github}}/{{package.name}}.git"
+    },
+    "bugs": {
+        "url": "https://github.com/{{vendor.github}}/{{package.name}}/issues"
+    },
+    "exports": {
+        ".": {
+            "import": "./dist/index.esm.mjs",
+            "require": "./dist/index.cjs.js"
+        }
+    },
+    "main": "dist/index.js",
+    "typings": "dist/index.d.ts",
+    "scripts": {
+        "test": "./node_modules/.bin/jest tests --verbose",
+        "test:coverage": "./node_modules/.bin/jest tests --coverage",
+        "fmt": "./node_modules/.bin/prettier --config prettier.config.js --write 'src/**/*.{js,ts,json,yml,yaml}' 'tests/**/*.{js,ts,json,yml,yaml}' './*.{js,json,yml,yaml}'",
+        "lint": "./node_modules/.bin/eslint --ext ts,js src/",
+        "lint:fix": "./node_modules/.bin/eslint --ext ts,js --fix src/",
+        "lint:staged": "./node_modules/.bin/lint-staged",
+        "fix": "npm run fmt && npm run lint:fix",
+        "build:dts": "dts-bundle-generator -o ./dist/index.d.ts ./src/index.ts",
+        "build": "rollup --config rollup.config.js  --bundleConfigAsCjs",
+        "preversion": "npm run test",
+        "postversion": "npm run build && npm run build:dts",
+        "prepare": "is-ci || husky install"
+    },
+    "lint-staged": {
+        "*.{js,ts}": [
+            "./node_modules/.bin/prettier --config prettier.config.js --write",
+            "./node_modules/.bin/eslint --ext ts,js --fix"
+        ],
+        "*.{json,css,scss,gql}": [
+            "./node_modules/.bin/prettier --config prettier.config.js --write"
+        ],
+        "*.{yaml,yml}": [
+            "./node_modules/.bin/prettier --config prettier.config.js --tab-width 2 --write"
+        ]
+    },
+    "devDependencies": {
+        "@rollup/plugin-commonjs": "^24.0.1",
+        "@rollup/plugin-node-resolve": "^15.0.1",
+        "@rollup/plugin-replace": "^5.0.1",
+        "@rollup/plugin-terser": "^0.4.0",
+        "@rollup/plugin-typescript": "^11.0.0",
+        "@types/jest": "^29.2.4",
+        "@types/node": "^18.11.12",
+        "@typescript-eslint/eslint-plugin": "^5.46.0",
+        "@typescript-eslint/parser": "^5.46.0",
+        "dts-bundle-generator": "^7.1.0",
+        "eslint": "^8.29.0",
+        "eslint-plugin-jest": "^27.1.6",
+        "eslint-plugin-node": "^11.1.0",
+        "husky": "^8.0.2",
+        "is-ci": "^3.0.1",
+        "jest": "^29.3.1",
+        "lint-staged": "^13.1.0",
+        "prettier": "^2.8.1",
+        "rollup": "^3.7.0",
+        "ts-jest": "^29.0.3",
+        "typescript": "^4.9"
+    }
+}
