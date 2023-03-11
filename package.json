@@ -1,6 +1,6 @@
 {
     "name": "react-ray",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "author": "Patrick Organ <patrick@permafrost.dev>",
     "license": "MIT",
     "description": "React integration for the Ray app",
