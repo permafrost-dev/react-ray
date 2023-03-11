@@ -1,6 +1,6 @@
 # react-ray
 
-React integration for the Ray app.
+React integration for the [Ray app](https://myray.app).
 
 <p align="center">
     <img src="https://img.shields.io/github/actions/workflow/status/permafrost-dev/react-ray/run-tests.yml?branch=main&label=tests&logo=github&style=flat-square" alt="test status">
