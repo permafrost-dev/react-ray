@@ -63,6 +63,8 @@ const MyComponent = () => {
     );
 };
 ```
+![react-ray-02](https://user-images.githubusercontent.com/5508707/224473711-e1a59701-35a7-4c75-80c5-e69eb13cbf35.gif)
+
 
 To update the Ray item in place that was sent with the contents of a ref when its dependencies change, use the `useRayTrackRef` hook:
 
@@ -86,6 +88,9 @@ const MyComponent = () => {
     );
 };
 ```
+
+![react-ray-01](https://user-images.githubusercontent.com/5508707/224473546-c695914e-3919-466f-bf05-f760dac36c0f.gif)
+
 
 ## Setup
 
