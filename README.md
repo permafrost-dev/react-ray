@@ -22,11 +22,16 @@ npm install react-ray
 
 ```js
 import { useRay } from 'react-ray';
+import { useEffect } from 'react';
 
 const MyComponent = () => {
     const [count, setCount] = useState(0);
 
-    useRay(count);
+    const ray = useRay(count);
+
+    useEffect(() => {
+        ray('Count updated: ', count);
+    }, [count]);
 
     return (
         <button onClick={() => setCount(count + 1)}>
