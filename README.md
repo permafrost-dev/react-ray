@@ -22,7 +22,7 @@ npm install react-ray
 
 ```js
 import { useRay } from 'react-ray';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 
 const MyComponent = () => {
     const [count, setCount] = useState(0);
@@ -45,6 +45,7 @@ If you want to send the contents of a ref to the Ray app in a sequential manner 
 
 ```js
 import { useRaySequentialRef } from 'react-ray';
+import { useRef, useState } from 'react';
 
 const MyComponent = () => {
     const [count, setCount] = useState(0);
@@ -67,6 +68,7 @@ To update the Ray item in place that was sent with the contents of a ref when it
 
 ```js
 import { useRayTrackRef } from 'react-ray';
+import { useRef, useState } from 'react';
 
 const MyComponent = () => {
     const [count, setCount] = useState(0);
