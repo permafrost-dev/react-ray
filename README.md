@@ -2,9 +2,7 @@
 
 ---
 
-
 React integration for the Ray app
-
 
 ## Installation
 
@@ -60,7 +58,7 @@ const MyComponent = () => {
 };
 ```
 
-To update the Ray item that was sent when the dependencies change, use the `useRayTrackRef` hook:
+To update the Ray item in place that was sent with the contents of a ref when its dependencies change, use the `useRayTrackRef` hook:
 
 ```js
 import { useRayTrackRef } from 'react-ray';
