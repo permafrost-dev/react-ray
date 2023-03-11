@@ -5,6 +5,83 @@
 
 React integration for the Ray app
 
+
+## Installation
+
+You can install the package via npm:
+
+```bash
+npm install react-ray
+```
+
+## Usage
+
+`react-ray` provides several React hooks:
+
+- `useRay` - send data to the Ray app.
+- `useRaySequentialRef` - send the contents of a ref to the Ray app in a sequential manner.
+- `useRayTrackRef` - send the contents of a ref to the Ray app and track the changes.
+
+```js
+import { useRay } from 'react-ray';
+
+const MyComponent = () => {
+    const [count, setCount] = useState(0);
+
+    useRay(count);
+
+    return (
+        <button onClick={() => setCount(count + 1)}>
+            Click me
+        </button>
+    );
+};
+```
+
+If you want to send the contents of a ref to the Ray app in a sequential manner (each dependency change sends a new item), use the `useRaySequentialRef` hook:
+
+```js
+import { useRaySequentialRef } from 'react-ray';
+
+const MyComponent = () => {
+    const [count, setCount] = useState(0);
+    const countRef = useRef(null);
+
+    useRaySequentialRef(countRef, [count]);
+
+    return (
+        <div>
+            <div ref={countRef}>{count}</div>
+            <button onClick={() => setCount(count + 1)}>
+                Click me
+            </button>
+        </div>
+    );
+};
+```
+
+To update the Ray item that was sent when the dependencies change, use the `useRayTrackRef` hook:
+
+```js
+import { useRayTrackRef } from 'react-ray';
+
+const MyComponent = () => {
+    const [count, setCount] = useState(0);
+    const countRef = useRef(null);
+
+    useRayTrackRef(countRef, [count]);
+
+    return (
+        <div>
+            <div ref={countRef}>{count}</div>
+            <button onClick={() => setCount(count + 1)}>
+                Click me
+            </button>
+        </div>
+    );
+};
+```
+
 ## Setup
 
 ```bash
