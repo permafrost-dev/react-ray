@@ -15,11 +15,11 @@
     "exports": {
         ".": {
             "import": "./dist/index.esm.mjs",
-            "require": "./dist/index.cjs.js"
+            "require": "./dist/index.cjs.js",
+            "default": "./dist/index.cjs.js"
         }
     },
-    "main": "dist/index.js",
-    "typings": "dist/index.d.ts",
+    "main": "dist/index.cjs.js",
     "scripts": {
         "test": "./node_modules/.bin/jest tests --verbose",
         "test:coverage": "./node_modules/.bin/jest tests --coverage",
@@ -29,7 +29,7 @@
         "lint:staged": "./node_modules/.bin/lint-staged",
         "fix": "npm run fmt && npm run lint:fix",
         "build:dts": "dts-bundle-generator -o ./dist/index.d.ts ./src/index.ts",
-        "build": "rollup --config rollup.config.js  --bundleConfigAsCjs",
+        "build": "node scripts/build-library.js",
         "preversion": "npm run test",
         "postversion": "npm run build && npm run build:dts",
         "prepare": "is-ci || husky install"
@@ -57,6 +57,7 @@
         "@typescript-eslint/eslint-plugin": "^5.54.1",
         "@typescript-eslint/parser": "^5.54.1",
         "dts-bundle-generator": "^7.2.0",
+        "esbuild": "^0.17.11",
         "eslint": "^8.36.0",
         "eslint-plugin-jest": "^27.2.1",
         "eslint-plugin-node": "^11.1.0",
