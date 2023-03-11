@@ -4,8 +4,8 @@ React integration for the Ray app.
 
 <p align="center">
     <img src="https://img.shields.io/github/actions/workflow/status/permafrost-dev/react-ray/run-tests.yml?branch=main&label=tests&logo=github&style=flat-square" alt="test status">
-    <img src="https://shields.io/npm/v/react-ray?style=flat-square" alt="npm version">
-    <img src="https://shields.io/github/license/permafrost-dev/react-ray?style=flat-square" alt="license">
+    <img src="https://shields.io/npm/v/react-ray?style=flat-square&nocache=1" alt="npm version">
+    <img src="https://shields.io/github/license/permafrost-dev/react-ray?style=flat-square&nocache=1" alt="license">
 </p>
 
 ## Installation
