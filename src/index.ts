@@ -8,7 +8,7 @@ export const useRay = (...args) => {
 export const useRaySequentialRef = (ref, deps = []) => {
     useEffect(() => {
         ray().html(ref.current.innerHTML);
-    }, [ ref, ...deps ]);
+    }, [ref, ...deps]);
 };
 
 export const useRayTrackRef = (ref, deps = []) => {
@@ -17,5 +17,5 @@ export const useRayTrackRef = (ref, deps = []) => {
     useEffect(() => {
         const r = rayRef.current ?? ray();
         rayRef.current = r.html(ref.current.innerHTML);
-    }, [ ref, ...deps ]);
+    }, [ref, ...deps]);
 };
