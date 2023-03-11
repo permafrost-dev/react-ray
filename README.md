@@ -1,7 +1,5 @@
 # react-ray
 
----
-
 React integration for the Ray app
 
 ## Installation
