@@ -132,7 +132,7 @@ Please review [our security policy](../../security/policy) on how to report secu
 ## Credits
 
 - [Patrick Organ](https://github.com/patinthehat)
-- [Sam Apostel](https://github.com/spatie)
+- [Sam Apostel](https://github.com/sam-apostel)
 - [All Contributors](../../contributors)
 
 ## License
