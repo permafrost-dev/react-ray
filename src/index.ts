@@ -11,7 +11,7 @@ export const useRay = (value, options: UseRayOptions = { replace: false, type: '
         }
 
         rayRef.current[options.type ?? 'json'](value);
-    }, [ value ]);
+    }, [value]);
 };
 
 export const useRayWithElement = (ref: RefObject<HTMLElement>, deps: any[] = [], options: RayWithElementOptions = { replace: true }) => {
