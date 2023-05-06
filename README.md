@@ -1,6 +1,6 @@
 # react-ray
 
-React integration for the [Ray app](https://myray.app).
+The official React integration for the [Ray app](https://myray.app) by [Spatie](https://github.com/spatie/ray).
 
 <p align="center">
     <img src="https://img.shields.io/github/actions/workflow/status/permafrost-dev/react-ray/run-tests.yml?branch=main&label=tests&logo=github&style=flat-square" alt="test status">
