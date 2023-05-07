@@ -11,7 +11,7 @@ export const useRay = (value, options: UseRayOptions = { replace: false, type: '
         }
 
         rayRef.current[options.type ?? 'json'](value);
-    }, [ value ]);
+    }, [value]);
 };
 
 export interface UseRayInstanceProps {
