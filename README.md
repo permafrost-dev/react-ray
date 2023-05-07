@@ -22,6 +22,7 @@ npm install react-ray
 
 - `useRay` - send data to the Ray app whenever it updates.
 - `useRayWithElement` - send the contents of an element ref to the Ray app, optionally updating the item in place when its dependencies change.
+- `useRayInstance` - access the Ray instance directly.
 
 ### `useRay()`
 
