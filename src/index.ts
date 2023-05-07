@@ -1,6 +1,5 @@
 import { RayWithElementOptions, UseRayOptions } from '@/types';
-import { Ray } from 'node-ray';
-import { ray } from 'node-ray/web';
+import { Ray, ray } from 'node-ray/web';
 import { RefObject, useEffect, useRef } from 'react';
 
 export const useRay = (value, options: UseRayOptions = { replace: false, type: 'json' }) => {

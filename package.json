@@ -1,6 +1,6 @@
 {
     "name": "react-ray",
-    "version": "1.1.2",
+    "version": "1.1.1",
     "author": "Patrick Organ <patrick@permafrost.dev>",
     "license": "MIT",
     "description": "React integration for the Ray app",
@@ -29,7 +29,7 @@
         "lint:fix": "./node_modules/.bin/eslint --ext ts,js --fix src/",
         "lint:staged": "./node_modules/.bin/lint-staged",
         "fix": "npm run fmt && npm run lint:fix",
-        "build:dts": "dts-bundle-generator -o ./dist/index.d.ts ./src/index.ts",
+        "build:dts": "dts-bundle-generator --no-check -o ./dist/index.d.ts ./src/index.ts",
         "build": "node scripts/build-library.js",
         "preversion": "npm run test",
         "postversion": "npm run build && npm run build:dts",
