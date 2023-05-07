@@ -4,6 +4,10 @@ All notable changes to `permafrost-dev/react-ray` will be documented in this fil
 
 ---
 
+## 1.1.2 - 2023-May-07
+
+- add `useRayWithElement` hook
+
 ## 1.1.1 - 2023-Mar-29
 
 - support React 16+
