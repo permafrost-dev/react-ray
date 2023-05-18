@@ -1,4 +1,7 @@
 # react-ray
+<p align="center">
+    <img src="https://repository-images.githubusercontent.com/608424968/dbda5ed6-2a32-43ed-ac01-e665ae6bda6f" height="420" alt="card">
+</p>
 
 The official React integration for the [Ray app](https://myray.app) by [Spatie](https://github.com/spatie/ray).
 
