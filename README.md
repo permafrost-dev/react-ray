@@ -9,6 +9,7 @@ The official React integration for the [Ray app](https://myray.app) by [Spatie](
     <img src="https://img.shields.io/github/actions/workflow/status/permafrost-dev/react-ray/run-tests.yml?branch=main&label=tests&logo=github&style=flat-square" alt="test status">
     <img src="https://shields.io/npm/v/react-ray?style=flat-square&nocache=1" alt="npm version">
     <img src="https://shields.io/github/license/permafrost-dev/react-ray?style=flat-square&nocache=1" alt="license">
+    <img src="https://codecov.io/gh/permafrost-dev/react-ray/branch/main/graph/badge.svg?token=5LmCr9EgqH" alt="coverage" />
 </p>
 
 ## Installation
