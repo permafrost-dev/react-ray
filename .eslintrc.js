@@ -42,6 +42,7 @@ module.exports = {
         'jest/no-disabled-tests': 'warn',
         'jest/no-identical-title': 'error',
         'newline-per-chained-call': [ 'warn', { ignoreChainWithDepth: 2 }],
+        'node/no-extraneous-import': 'off',
         'node/no-missing-import': 'off',
         'node/no-missing-require': 'off',
         'node/no-process-exit': 'off',
