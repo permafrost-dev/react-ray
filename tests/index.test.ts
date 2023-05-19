@@ -1,5 +1,5 @@
-import { useRay } from '@/index';
-import { Ray } from 'node-ray/web';
+import { useRay, useRayInstance } from '@/index';
+import { Ray, ray } from 'node-ray/web';
 import { renderHook } from '@testing-library/react';
 import { useRef } from 'react';
 
@@ -27,4 +27,14 @@ it('useRay updates ray ref.current', () => {
 
     expect(raySpy).toHaveBeenCalledWith(value);
     expect(rayRef.result.current).not.toBeNull();
+});
+
+// Tests that useRayInstance function returns the same instance when called multiple times with the same argument.
+it('useRay instance returns the same instance when called multiple times with same argument', () => {
+    const instance = ray();
+
+    const result1 = renderHook(() => useRayInstance({ instance }));
+    const result2 = renderHook(() => useRayInstance({ instance }));
+
+    expect(result1.result.current.uuid).toBe(result2.result.current.uuid);
 });
