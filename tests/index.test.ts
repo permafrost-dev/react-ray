@@ -1,4 +1,4 @@
-import { useRay, useRayInstance } from '@/index';
+import { useRay, useRayInstance, useRayWithElement } from '@/index';
 import { Ray, ray } from 'node-ray/web';
 import { renderHook } from '@testing-library/react';
 import { useRef } from 'react';
@@ -30,11 +30,24 @@ it('useRay updates ray ref.current', () => {
 });
 
 // Tests that useRayInstance function returns the same instance when called multiple times with the same argument.
-it('useRay instance returns the same instance when called multiple times with same argument', () => {
+it('useRayInstance returns the same instance when called multiple times with same argument', () => {
     const instance = ray();
 
     const result1 = renderHook(() => useRayInstance({ instance }));
     const result2 = renderHook(() => useRayInstance({ instance }));
 
     expect(result1.result.current.uuid).toBe(result2.result.current.uuid);
+});
+
+it('useRayWithElement calls the appropriate ray method', () => {
+    const content = '<h1>Hello World</h1>';
+    const value = renderHook(() => useRef({ innerHTML: content }));
+    const raySpy = jest.spyOn(Ray.prototype, 'html');
+    const rayRef = renderHook(() => useRef()); //{ current: null };
+
+    // @ts-ignore
+    renderHook(() => useRayWithElement(value, [], { replace: false }));
+
+    expect(raySpy).toHaveBeenCalledWith(content);
+    expect(rayRef.result.current).not.toBeNull();
 });
