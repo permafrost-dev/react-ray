@@ -4,5 +4,5 @@ export interface RayWithElementOptions {
 
 export interface UseRayOptions {
     replace?: boolean;
-    type?: 'json' | 'html' | 'text' | 'xml';
+    type?: 'toJson' | 'html' | 'text' | 'xml';
 }
