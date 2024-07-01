@@ -67,7 +67,7 @@
         "typescript": "^5.4.2"
     },
     "dependencies": {
-        "node-ray": "^1.21.0",
+        "node-ray": "^2.1.2",
         "react": "~16.0.0"
     }
 }
